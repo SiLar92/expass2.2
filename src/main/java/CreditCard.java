@@ -1,16 +1,14 @@
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class CreditCard {
     @Id
+    @GeneratedValue
     private long id;
     private int number;
     private int limit;
     private int balance;
 
-    @OneToOne(mappedBy = "pincode");
-    private Pincode p;
-
+    @OneToOne
+    private Pincode pincode;
 }
