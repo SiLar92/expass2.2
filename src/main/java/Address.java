@@ -11,7 +11,29 @@ public class Address {
     private String street;
     private int number;
 
-    @ManyToMany(mappedBy = "person")
+    @ManyToMany
     private final List<Person> inhabitants = new ArrayList<>();
 
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public List<Person> getInhabitants() {
+        return inhabitants;
+    }
+    public void addPerson(Person person) {
+        this.inhabitants.add(person);
+    }
 }

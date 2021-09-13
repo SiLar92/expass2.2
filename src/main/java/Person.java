@@ -10,9 +10,9 @@ public class Person {
     private long id;
     private String name;
 
-    @ManyToMany(mappedBy = "address")
+    @ManyToMany
     private final List<Address> addressList = new ArrayList<>();
-    @OneToMany(mappedBy = "creditcard")
+    @OneToMany
     private final List<CreditCard> creditCards = new ArrayList<>();
 
     public String getName() {
@@ -21,5 +21,21 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<CreditCard> getCreditCards() {
+        return creditCards;
+    }
+
+    public void addCreditCard(CreditCard card) {
+        this.creditCards.add(card);
+    }
+
+    public List<Address> getAddressList() {
+        return addressList;
+    }
+
+    public void addAddress(Address address) {
+        this.addressList.add(address);
     }
 }

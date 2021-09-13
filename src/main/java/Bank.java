@@ -9,6 +9,22 @@ public class Bank {
     private long id;
     private String name;
 
-    @OneToMany(mappedBy = "bank")
-    private List<CreditCard> cards = new ArrayList<>();
+    @OneToMany
+    private final List<CreditCard> cards = new ArrayList<>();
+
+    public List<CreditCard> getCards() {
+        return cards;
+    }
+
+    public void addCard(CreditCard card) {
+        this.cards.add(card);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
